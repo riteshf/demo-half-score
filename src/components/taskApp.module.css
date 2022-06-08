@@ -1,0 +1,30 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.taskApp {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.taskBody {
+  position: relative;
+  padding: 2rem 1.5rem;
+  height: 420px;
+  overflow: auto;
+}
+
+.taskBody h2 {
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,108 @@
+.task {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  user-select: none;
+  padding: 0.65rem 0;
+  text-align: left;
+}
+.task:first-child {
+  padding-top: 0;
+}
+.task:last-child {
+  padding-bottom: 0;
+}
+.taskInfos {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin-right: 1rem;
+}
+
+.taskCheckbox {
+  flex-shrink: 0;
+  margin: 0;
+  margin-right: 0.75rem;
+  line-height: 0;
+  cursor: pointer;
+}
+.taskCheckbox input {
+  display: none;
+}
+.taskCheckboxEl {
+  position: relative;
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--font-light);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.taskCheckboxEl:hover {
+  border-color: #999;
+}
+.taskCheckboxEl::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 7px;
+  height: 12px;
+  border-style: solid;
+  border-color: white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(65deg);
+  transition: 0.3s;
+}
+.taskCheckbox input:checked + .taskCheckboxEl {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.taskCheckbox input:checked + .taskCheckboxEl::before {
+  transform: rotate(45deg);
+}
+.taskText {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.task.done .taskText {
+  color: var(--font-light);
+}
+.task .taskText::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  max-width: 0;
+  height: 1px;
+  background-color: #999;
+  transition: 0.3s 0.1s;
+}
+.task.done .taskText::before {
+  max-width: 100%;
+}
+
+.taskRemove {
+  flex-shrink: 0;
+  line-height: 0;
+  transition: 0.2s ease;
+  opacity: 0;
+}
+.task:hover .taskRemove {
+  opacity: 1;
+}
+.taskRemove button {
+  border-radius: 50%;
+  color: var(--font-light);
+  transition: 0.2s ease;
+}
+.taskRemove button:hover {
+  color: tomato;
+}
